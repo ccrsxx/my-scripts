@@ -22,7 +22,7 @@ def parse_args() -> tuple[str, bool]:
     return args.filename, args.delete
 
 
-def main():
+def main() -> None:
     filename, delete = parse_args()
 
     if not filename.endswith('.png'):

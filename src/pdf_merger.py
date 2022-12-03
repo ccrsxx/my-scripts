@@ -6,7 +6,7 @@ from utils.wait import wait_close
 from PyPDF2 import PdfFileMerger
 
 
-def parse_args():
+def parse_args() -> str:
     parser = argparse.ArgumentParser(description='merge pdf files')
 
     parser.add_argument(
@@ -23,7 +23,7 @@ def parse_args():
     return args.path
 
 
-def pdf_merger(path: str):
+def pdf_merger(path: str) -> None:
     target_path = os.path.abspath(path)
 
     if not os.path.isdir(target_path):
