@@ -4,7 +4,7 @@ import argparse
 import subprocess
 
 from utils.wait import wait_close
-from glob import glob
+from glob import iglob
 
 IMAGE_EXTENSIONS = (
     'jpeg',
@@ -53,7 +53,7 @@ def main() -> None:
     images = [
         image
         for images_extension in IMAGE_EXTENSIONS
-        for image in glob(
+        for image in iglob(
             f'{target_path}{glob_pattern}.{images_extension}', recursive=recursive
         )
     ]
